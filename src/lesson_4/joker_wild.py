@@ -9,8 +9,10 @@ cards_black = [rank + suit for rank in ranks_all for suit in 'SC']
 
 def best_wild_hand(hand):
     "Try all values for jokers in all 5-card selections."
-    hands = set(best_hand(hand)
-                for hand in itertools.product(*map(replacements, hand)))
+    hands = {
+        best_hand(hand) for hand in itertools.product(*map(replacements, hand))
+    }
+
     return max(hands, key = hand_rank)
 
 

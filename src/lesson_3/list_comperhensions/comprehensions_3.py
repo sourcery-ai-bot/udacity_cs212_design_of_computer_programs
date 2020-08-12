@@ -1,8 +1,7 @@
 def foo(iterable):
-    ta_facts_remote = [f'{name} lives in {country} and is the TA for {course}'
+    return [f'{name} lives in {country} and is the TA for {course}'
                        for name, country, course in iterable
                        if country != 'USA']
-    return ta_facts_remote
 
 
 def main():

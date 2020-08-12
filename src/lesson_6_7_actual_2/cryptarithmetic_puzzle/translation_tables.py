@@ -8,9 +8,14 @@ from time_calls import timed_call
 def get_formula_translated(formula):
     """Generate all possible fillings-in of letters in formula with digits."""
     # formula_characters = set(re.findall('[A-Z]', formula))
-    formula_characters = set(character for character in formula if character.isalpha() and character.isupper())
+    formula_characters = {
+        character
+        for character in formula
+        if character.isalpha() and character.isupper()
+    }
+
     translate_from = ''.join(formula_characters)
-    
+
     number_permutations = itertools.permutations('0123456789', len(translate_from))
     for number_permutation in number_permutations:
         translate_to = ''.join(number_permutation)
@@ -127,9 +132,11 @@ def compile_word(word):
     E.g., compile_word('YOU') => '(1*U+10*O+100*Y)'
     Non-uppercase words unchanged: compile_word('+') -> '+'"""
     if word.isupper():
-        terms = []
-        for index, character in enumerate(word[::-1]):
-            terms.append(f'{character}*{10 ** index}')
+        terms = [
+            f'{character}*{10 ** index}'
+            for index, character in enumerate(word[::-1])
+        ]
+
         return f'({"+".join(terms)})'
     else:
         return word

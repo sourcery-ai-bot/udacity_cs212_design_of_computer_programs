@@ -1,7 +1,6 @@
 def foo(iterable):
-    ta_facts = [f'{name} lives in {country} and is the TA for {course}'
+    return [f'{name} lives in {country} and is the TA for {course}'
                 for name, country, course in iterable]
-    return ta_facts
 
 
 def bar(iterable):

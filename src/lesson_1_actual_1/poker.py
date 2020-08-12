@@ -54,13 +54,13 @@ def hand_rank(hand):
     
     groups = group(['--23456789TJQKA'.index(rank) for rank, suit in hand])
     counts, ranks = unzip(groups)
-    
+
     if ranks == (14, 5, 4, 3, 2):
         ranks = (5, 4, 3, 2, 1)
-    
+
     straight = len(ranks) == 5 and max(ranks) - min(ranks) == 4
-    flush = len(set([suit for rank, suit in hand])) == 1
-    
+    flush = len({suit for rank, suit in hand}) == 1
+
     return max(count_rankings[counts], 4 * straight + 5 * flush), ranks
 
 

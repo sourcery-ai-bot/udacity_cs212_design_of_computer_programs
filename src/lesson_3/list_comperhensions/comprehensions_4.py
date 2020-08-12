@@ -1,8 +1,7 @@
 def foo(iterable):
-    ta_300 = [f'{name} is the TA for {course}'
+    return [f'{name} is the TA for {course}'
               for name, country, course in iterable
               if course[2] == '3']
-    return ta_300
 
 
 def main():

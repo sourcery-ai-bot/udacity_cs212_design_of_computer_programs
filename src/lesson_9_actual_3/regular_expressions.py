@@ -28,7 +28,7 @@ def match(pattern, text):
 def match1(pattern, text):
     """Return True if first character of text matched pattern character p."""
     if not text: return False
-    return pattern == '.' or pattern == text[0]
+    return pattern in ['.', text[0]]
 
 
 def match_star(p, pattern, text):

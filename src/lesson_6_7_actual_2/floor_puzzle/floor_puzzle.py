@@ -11,7 +11,7 @@ def floor_puzzle_my():
     for (Hopper, Kay, Liskov, Perlis, Ritchie) in orderings:
         if Hopper == top: continue
         if Kay == bottom: continue
-        if Liskov == top or Liskov == bottom: continue
+        if Liskov in [top, bottom]: continue
         if Perlis <= Kay: continue
         if is_adjacent(Ritchie, Liskov): continue
         if is_adjacent(Liskov, Kay): continue

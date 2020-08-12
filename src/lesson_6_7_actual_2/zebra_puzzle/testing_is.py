@@ -3,13 +3,13 @@ import math
 
 def main():
     print(1 is 1)
-    print(1 is 1 ** 1)
-    print(1 is int(math.pow(1, 1)))
+    print(1 ** 1 is 1)
+    print(int(math.pow(1, 1)) is 1)
     print()
-    
+
     print(100000 is 100000)
-    print(100000 is 100000 ** 1)
-    print(100000 is int(math.pow(100000, 1)))
+    print(100000 ** 1 is 100000)
+    print(int(math.pow(100000, 1)) is 100000)
     print()
 
 

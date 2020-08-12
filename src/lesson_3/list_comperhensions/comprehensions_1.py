@@ -1,8 +1,5 @@
 def foo(iterable):  # BAD UGLY SLOW
-    uppercase_tas = []
-    for index in range(len(iterable)):
-        uppercase_tas.append(iterable[index].upper())
-    return uppercase_tas
+    return [item.upper() for item in iterable]
 
 
 def bar(iterable):
